@@ -10,4 +10,11 @@ setDT function
 ### 1_c ::avg viewed price per customer
 extract userid and price
 apply aggregate function , use groupby
-1
+#### 1_d :: closest users 
+checking users having avg viewed price closest
+#### 1_e :: change date format
+chron library
+update format of object
+
+
+
