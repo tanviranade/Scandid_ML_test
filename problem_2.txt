@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+void matinput(int arr[15][15])
+{
+	
+	int i , j;
+	printf("enter elements of array");
+    for(i=0;i<15;i++)
+    {
+    	for(j=0;j<15;j++)
+    	{
+    		scanf("%d",&arr[i][j]);
+    	}
+    }
+    return arr;
+}
+void printmat( int arr[15][15])
+{
+    int i ,j;
+    for(i=0;i<15;i++)
+    {
+        for(j=0;j<15;j++){
+            printf("%d \t" , arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+void convolution(int arr[15][15])
+{
+    int i ,j,k,l;
+    int mat[3][3]= {{2,0,2},{0,2,0},{0,0,2}};
+    for(i=0;i<15;i++){
+        for(j=0;j<15;j++){
+            if(i==0 || i==14)
+            {
+                if(j==0||j==14)
+                {
+                    break;
+                }
+            }
+            else
+            {
+                for(k=-1;k<2;k++)
+                {
+                    for(l=-1;l<2;l++)
+                    {
+                        arr[i][j]=mat[k+1][l+1]*arr[i+k][j+k]+arr[i][j];
+                    }
+                }
+            }
+        }
+    }
+    printmat(arr);
+}
+int main(void) {
+	// your code goes here
+	int a[15][15] ;
+	matinput(a);
+	printmat(a);
+	convolution(a);
+	
+	return 0;
+}
+
