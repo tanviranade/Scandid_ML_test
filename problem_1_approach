@@ -1,0 +1,13 @@
+##1_a :: Calculate no of unique users
+read.csv = to load dataset 
+df = user id column
+unique values of df
+length of df
+###1_b :: most popular product and category
+package data.table
+sort dataframe in decreasing order of frequencies.
+setDT function 
+###1_c ::avg viewed price per customer
+extract userid and price
+apply aggregate function , use groupby
+1
